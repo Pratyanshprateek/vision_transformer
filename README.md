@@ -52,9 +52,25 @@ Then open the notebook and run it top to bottom.
 
 After training finishes and the checkpoint exists at `./outputs/vit_chest_xray_classifier.pt`, you can predict one image with:
 
+macOS / Linux:
+
 ```bash
 source .venv/bin/activate
 python predict_single_xray.py chest_xray/test/NORMAL/IM-0001-0001.jpeg --cpu
+```
+
+Windows PowerShell:
+
+```powershell
+.venv\Scripts\Activate.ps1
+python predict_single_xray.py "C:\path\to\your_xray.jpeg" --cpu
+```
+
+Windows Command Prompt:
+
+```bat
+.venv\Scripts\activate
+python predict_single_xray.py C:\path\to\your_xray.jpeg --cpu
 ```
 
 You can also pass your own image path:
