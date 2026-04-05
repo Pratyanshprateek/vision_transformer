@@ -39,8 +39,8 @@ After extraction, make sure the final folder in this project is exactly `./chest
 
 The notebook is currently configured for a stable local run:
 
-- `TARGET_TOTAL_IMAGES = 1000`
-- roughly `500 NORMAL` + `500 PNEUMONIA`
+- `TARGET_TOTAL_IMAGES = 3000`
+- roughly `1500 NORMAL` + `1500 PNEUMONIA`
 - automatic stratified split into `70% train`, `15% validation`, `15% test`
 - `FORCE_CPU = True` to avoid Apple `mps` kernel crashes seen on some local setups
 
