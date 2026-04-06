@@ -35,16 +35,31 @@ Expand-Archive chest-xray-pneumonia.zip -DestinationPath .
 
 After extraction, make sure the final folder in this project is exactly `./chest_xray`. If Kaggle extracts into a nested folder, move or rename it so the notebook can find it.
 
-## Dataset Size
+## Current Dataset
 
-The notebook is currently configured for a stable local run:
+The project is currently being run with an expanded dataset in this workspace:
 
-- `TARGET_TOTAL_IMAGES = 3000`
-- roughly `1500 NORMAL` + `1500 PNEUMONIA`
-- automatic stratified split into `70% train`, `15% validation`, `15% test`
-- `FORCE_CPU = True` to avoid Apple `mps` kernel crashes seen on some local setups
+- `train/NORMAL = 10941`
+- `train/PNEUMONIA = 8868`
+- `val/NORMAL = 1758`
+- `val/PNEUMONIA = 1428`
+- `test/NORMAL = 1169`
+- `test/PNEUMONIA = 970`
 
-If you want a larger run later, increase `TARGET_TOTAL_IMAGES` in the notebook and set `FORCE_CPU = False` only if your machine handles `mps` reliably.
+Total images currently present: `25134`
+
+## Current Training Setup
+
+The notebook is now configured as a V2 pipeline:
+
+- `USE_FULL_DATASET = True`
+- full-data stratified split for training/validation/testing
+- class imbalance handled with `CrossEntropyLoss(weight=class_weights)`
+- stronger training-only augmentation
+- `FORCE_CPU = True` for stable Mac execution
+- `NUM_WORKERS = 0` on non-CUDA runs
+
+The notebook currently uses `BATCH_SIZE = 32` on CPU. That is an experiment setting, not a guaranteed optimum, so adjust it if runtime or memory behavior becomes poor.
 
 Then open the notebook and run it top to bottom.
 
