@@ -13,6 +13,8 @@ This project contains a Jupyter notebook that trains a pretrained `google/vit-ba
 Download the Kaggle **Chest X-Ray Images (Pneumonia)** dataset from:
 
 - [Kaggle: Chest X-Ray Images (Pneumonia)](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia)
+- [Kaggel: Chest X-Ray Dataset](https://www.kaggle.com/datasets/muhammadrehan00/chest-xray-dataset)
+- [Kaggel: Pediatric Pneumonia Chest X-ray](https://www.kaggle.com/datasets/andrewmvd/pediatric-pneumonia-chest-xray)
 
 Place the extracted dataset in:
 
